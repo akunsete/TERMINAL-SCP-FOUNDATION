@@ -1,0 +1,113 @@
+local WalkSpeed = 16 -- Walkspeed default
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "🔥🗿TTQ Gui🗿🔥",
+   LoadingTitle = "Rayfield Interface Suite",
+   LoadingSubtitle = "by akunsete",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Buat folder kustom untuk hub/game Anda
+      FileName = "🔫TTQ HUB🔫"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- Kode undangan Discord, jangan sertakan discord.gg/. Misalnya discord.gg/ABCD akan menjadi ABCD
+      RememberJoins = true -- Tetapkan ini menjadi false agar mereka bergabung dengan discord setiap kali mereka memuatnya
+   },
+   KeySystem = false, -- Tetapkan ini menjadi true untuk menggunakan sistem kunci kami
+   KeySettings = {
+      Title = "Hub Key",
+      Subtitle = "Key System",
+      Note = "Tidak ada metode untuk mendapatkan kunci disediakan",
+      FileName = "Key", -- Direkomendasikan untuk menggunakan sesuatu yang unik karena skrip lain yang menggunakan Rayfield mungkin akan menimpa file kunci Anda
+      SaveKey = true, -- Kunci pengguna akan disimpan, tetapi jika Anda mengubah kunci, mereka tidak akan dapat menggunakan skrip Anda
+      GrabKeyFromSite = true, -- Jika ini benar, tetapkan Kunci di bawah ini ke situs RAW tempat Anda ingin Rayfield mendapatkan kunci dari
+      Key = {"https://pastebin.com/raw/ADVCRTZj"} -- Daftar kunci yang akan diterima oleh sistem, dapat berupa tautan file RAW (pastebin, github, dll.) atau string sederhana ("hello", "key22")
+   }
+})
+
+local Hub = Window:CreateTab("🗿Script Player",  10511856020) -- Judul, 
+local Section = Hub:CreateSection("Script Player")
+
+local Button = Hub:CreateButton({
+   Name = "🟢Keyboard",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local Button = Hub:CreateButton({
+   Name = "🟢Fly Gui",
+   Callback = function()
+          loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-I-Fly-gui-V3-I-6627"))()
+   end,
+})
+
+local Button = Hub:CreateButton({
+   Name = "🔴Infinite Yield",
+   Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Hub = Window:CreateTab("Gui Games",  10511856020) -- Judul, Gambar
+local Section = Hub:CreateSection("Gui Games")
+
+local Button = Hub:CreateButton({
+   Name = "🟢Blox Fruit",
+   Callback = function()
+        loadstring(game:HttpGet("https://isnahamzahpastebin.tech/gantenghubv1_baru"))()
+   end,
+})
+
+local Button = Hub:CreateButton({
+   Name = "🟢possesor",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sidhsksjsjsh/Possessor/main/.lua"))()
+   end,
+})
+
+local Hub = Window:CreateTab("Setting", 10511856020) -- Judul, Gambar
+local Section = Hub:CreateSection("Setting")
+
+local Slider = Hub:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {0, 100},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = WalkSpeed,
+   Flag = "WalkSpeed", -- Penanda yang unik untuk menyimpan konfigurasi
+   Callback = function(Value)
+      WalkSpeed = Value
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = WalkSpeed -- Atur walkspeed ke nilai yang dipilih
+   end,
+})
+
+local Slider = Hub:CreateSlider({
+   Name = "Jump",
+   Range = {0, 500},
+   Increment = 10,
+   Suffix = "Jumping",
+   CurrentValue = 10,
+   Flag = "Jumps", -- Penanda yang unik untuk menyimpan konfigurasi
+   Callback = function(Value)
+      -- Set the JumpPower of the Humanoid to the selected value
+      game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+   end,
+})
+
+local Button = Hub:CreateButton({
+   Name = "Esp",
+   Callback = function()
+        pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+   end,
+})
+
+local Button = Hub:CreateButton({
+   Name = "Noclip",
+   Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/JBpVFq7M"))()
+   end,
+})
